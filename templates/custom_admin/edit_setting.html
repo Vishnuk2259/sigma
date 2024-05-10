@@ -1,0 +1,119 @@
+{% extends 'custom_admin/base.html' %}
+{% load static %}
+
+
+{% block extra_head %}
+<style>
+    .form-control {
+        border: 1px solid #d2d6da !important;
+        padding-left: 5px !important;
+    }
+
+    .col-form-label {
+        margin-top: 20px !important;
+        width: 500px !important;
+    }
+
+    .btn {
+        margin-top: 20px !important;
+        margin-right: 20px !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="col-6 grid-margin stretch-card mx-auto">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit {{ table_name }}</h4>
+            <p>Settings ID: {{ settings_id }}</p>
+
+            <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="id_name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        {{ form.name }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_description" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        {{ form.description }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_address" class="col-sm-2 col-form-label">Address</label>
+                    <div class="col-sm-10">
+                        {{ form.address }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_phone" class="col-sm-2 col-form-label">Phone</label>
+                    <div class="col-sm-10">
+                        {{ form.phone }}
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="id_email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        {{ form.email }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_facebook" class="col-sm-2 col-form-label">Facebook URL</label>
+                    <div class="col-sm-10">
+                        {{ form.facebook }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_twitter" class="col-sm-2 col-form-label">Twitter URL</label>
+                    <div class="col-sm-10">
+                        {{ form.twitter }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_instagram" class="col-sm-2 col-form-label">Instagram URL</label>
+                    <div class="col-sm-10">
+                        {{ form.instagram }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_logo" class="col-sm-2 col-form-label">Logo</label>
+                    <div class="col-sm-10">
+                        {{ form.image }}
+                        <textarea name="logo" id="logo" style="display: none;"></textarea>
+                        <img src="{{form.logo.url}}" id="image" style="height: auto;width: 100px;">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_favicon" class="col-sm-2 col-form-label">Favicon</label>
+                    <div class="col-sm-10">
+                        {{ form.image }}
+                        <textarea name="favicon" id="favicon" style="display: none;"></textarea>
+                        <img src="{{form.favicon.url}}" id="image" style="height: auto;width: 100px;">
+                    </div>
+                </div>
+
+                {{ form.errors }}
+
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <a href="{% url 'settings_view' %}" class="btn btn-dark">Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

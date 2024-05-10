@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sigma - Our Profile</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css" rel="stylesheet' %}">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <img src="{% static 'img/logo.png' %}" alt="">
+        <!-- <h1>SIGMA</h1> -->
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="dropdown"><a href="#"><span>About Us</span> </a>
+            <ul>
+              <li><a href="{% url 'profile' %}">Company Profile</a></li>
+              <li><a href="{% url 'team' %}">Our Team</a></li>
+              <li><a href="{% url 'client' %}">Our Clients</a></li>
+              <li><a href="{% url 'partners' %}">Partners & Investors</a></li>
+              <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'facilities' %}">Facilities</a></li>
+          <li class="contactmob"><a href="{% url 'contact' %}">Contact Us</a></li>
+          <li></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+        <a href="{% url 'contact' %}" class="btn-get-started contactus">Contact Us</a>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>About Us</li>
+            <li class="active">Company Profile</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+
+    <section id="welcome" class="welcome">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-in">
+            {% if hero_banner.title %}
+              <h2>{{ hero_banner.title }}</h2>
+            {% else %}
+              <h2>Welcome to SIGMA</h2>
+            {% endif %}
+            {% if hero_banner.content %}
+              <p>{{ hero_banner.content }}</p>
+            {% else %}
+              <h2>Experience Excellence: Welcome to Sigma, your gateway to cutting-edge solutions and unparalleled innovation.</h2>
+            {% endif %}
+        </div>
+
+        <div class="row gy-4" data-aos="fade-up">
+
+          <div class="col-sm-4">
+            <div class="welcomecont">
+              <i class="fa fa-bullseye"></i>
+              {% if mission_banner.title %}
+                <h3>{{ mission_banner.title }}</h3>
+              {% else %}
+                <h3>Our Mission</h3>
+              {% endif %}
+              {% if mission_banner.content %}
+                <p>{{ mission_banner.content }}</p>
+              {% else %}
+                <p>Sigma's mission is to pioneer transformative solutions, driving innovation and excellence across industries, and fostering a brighter future for all.</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="welcomecont">
+              <i class="fa fa-eye"></i>
+              {% if vission_banner.title %}
+                <h3>{{ vission_banner.title }}</h3>
+              {% else %}
+                <h3>Our Vission</h3>
+              {% endif %}
+              {% if vission_banner.content %}
+                <p>{{ vission_banner.content }}</p>
+              {% else %}
+                <p>Envisioning Tomorrow: Sigma's vision is to lead the way in redefining industry standards, inspiring progress, and shaping a world of limitless possibilities.</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="welcomecont">
+              <i class="fa fa-diamond"></i>
+              {% if value_banner.title %}
+                <h3>{{ value_banner.title }}</h3>
+              {% else %}
+                <h3>Our Vission</h3>
+              {% endif %}
+              {% if value_banner.content %}
+                <p>{{ value_banner.content }}</p>
+              {% else %}
+                <p>Inspired by Integrity: Sigma's core values—integrity, innovation, collaboration, and excellence—drive us to deliver exceptional solutions and forge enduring partnerships.</p>
+              {% endif %}
+              <!-- <li>Integrity</li>
+              <li>Respect</li>
+              <li>Teamwork</li>
+              <li>Trust</li> -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-in">
+          {% if team_banner.title %}
+            <h2>{{ team_banner.title }}</h2>
+          {% else %}
+            <h2>Our Team</h2>
+          {% endif %}
+          {% if team_banner.content %}
+            <p>{{ team_banner.content }}</p>
+          {% else %}
+            <p>Meet the Sigma Team: A dedicated and diverse group of professionals united by a passion for innovation and excellence. Together, we strive to tackle challenges, drive progress, and exceed expectations.</p>
+          {% endif %}
+        </div>
+
+        <div class="row gy-4" data-aos="fade-up">
+
+          {% for team in teams %}
+            {% if forloop.counter <= 4 %}
+              <div class="col-sm-3">
+                <div class="ourteam">
+                  {% if team.image %}
+                    <img src="{{ team.image.url}}">
+                  {% else %}
+                    <img src="{% static 'img/man.jpeg' %}">
+                  {% endif %}
+                  <h3>{{ team.name }}</h3>
+                  <p>{{ team.member_designation }}</p>
+                  <a href="{{ team.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          <!-- <div class="col-sm-3">
+            <div class="ourteam">
+              <img src="{% static 'img/man.jpeg' %}">
+              <h3>Ramesh Krishna</h3>
+              <p>Founder, SIGMA</p>
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="ourteam">
+              <img src="{% static 'img/man.jpeg' %}">
+              <h3>Ramesh Krishna</h3>
+              <p>Founder, SIGMA</p>
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="ourteam">
+              <img src="{% static 'img/man.jpeg' %}">
+              <h3>Ramesh Krishna</h3>
+              <p>Founder, SIGMA</p>
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="ourteam">
+              <img src="{% static 'img/man.jpeg' %}">
+              <h3>Ramesh Krishna</h3>
+              <p>Founder, SIGMA</p>
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </div> -->
+
+        </div>
+
+        <center> <a href="{% url 'team' %}" class="btn-inner-section">See All <i class="fa fa-arrow-right"></i> </a> </center>
+
+      </div>
+    </section>
+
+
+
+    <section id="whysigma" class="whysigma">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-in">
+          {% if why_sigma_banner.title %}
+            <h2>{{ why_sigma_banner.title }}</h2>
+          {% else %}
+            <h2>Why SIGMA</h2>
+          {% endif %}
+        </div>
+
+        <div class="row gy-4" data-aos="fade-up">
+
+          <div class="col-sm-4">
+            {% if why_sigma_banner.image %}
+              <img src="{{ why_sigma_banner.image.url }}" width="100%">
+            {% else %}
+              <img src="{% static 'img/why.png' %}" width="100%">
+            {% endif %}
+          </div>
+
+          <div class="col-sm-6 whytext">
+            {% if why_sigma_banner.content %}
+              <p>{{ why_sigma_banner.content }}</p>
+            {% else %}
+              <p>Sigma stands as the epitome of innovation, integrity, and excellence. With a relentless pursuit of perfection, we
+              continuously push boundaries to deliver solutions that exceed expectations. Our commitment to quality, coupled with a
+              passion for progress, makes us the preferred choice for those seeking unparalleled expertise and reliability. Choose
+              Sigma, and embark on a transformative journey where your vision becomes reality.</p>
+            {% endif %}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header" data-aos="fade-in">
+          <h2>What our clients say</h2>
+        </div>
+
+        <div class="position-relative h-100">
+          <div class="slides-1 portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center testinn">
+
+              {% for client in clients %}
+                <div class="swiper-slide slidertest">
+                  <!-- <h5>Outstanding!</h5> -->
+                  {% if client.image %}
+                    <img src="{{ client.image.url }}">
+                  {% else %}
+                    <img src="{% static 'img/man.jpeg' %}">
+                  {% endif %}
+                  <h4>{{ client.name }}</h4>
+                  {% if client.feedback %}
+                  <h6>{{ client.feedback }}</h6>
+                  {% endif %}
+                  <!-- <p>Founder, SIGMA</p> -->
+                </div>
+              {% endfor %}
+
+              <!-- <div class="swiper-slide">
+                <h5>Outstanding!</h5>
+                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua.</h6>
+                <img src="assets/img/man.jpeg">
+                <p>Founder, SIGMA</p>
+              </div>
+
+              <div class="swiper-slide">
+                <h5>Outstanding!</h5>
+                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua.</h6>
+                <img src="assets/img/man.jpeg">
+                <p>Founder, SIGMA</p>
+              </div>
+
+              <div class="swiper-slide">
+                <h5>Outstanding!</h5>
+                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua.</h6>
+                <img src="assets/img/man.jpeg">
+                <p>Founder, SIGMA</p>
+              </div> -->
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <section class="connect">
+      <div class="container">
+        <div class="connecttext">
+          <h2>Connect With Us</h2>
+          <p>Ready to see SIGMA in action? </p>
+          <a href="{% url 'contact' %}" class="btn-get-started">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer" data-aos="fade-up">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-8 col-md-12 footer-info">
+          <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+            <img src="{% static 'img/logo.png' %}" width="auto">
+          </a>
+          {% if settings.description %}
+          <p>{{ settings.description }}</p>
+          {% else %}
+          <p>Your all-in-one solution for elevating defense solutions</p>
+          {% endif %}
+          <div class="social-links d-flex mt-4">
+            <a href="{{ settings.twitter }}" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="{{ settings.facebook }}" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="{{ settings.instagram }}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'profile' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'facilities' %}">Facilities</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <ul>
+            <li><a href="{% url 'team' %}">Our Team</a></li>
+            <li><a href="{% url 'client' %}">Our Clients</a></li>
+            <li><a href="faq.html">FAQ's</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

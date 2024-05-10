@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sigma - Our Facilities</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css" rel="stylesheet' %}">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <img src="{% static 'img/logo.png' %}" alt="">
+        <!-- <h1>SIGMA</h1> -->
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="dropdown"><a href="#"><span>About Us</span> </a>
+            <ul>
+              <li><a href="{% url 'profile' %}">Company Profile</a></li>
+              <li><a href="{% url 'team' %}">Our Team</a></li>
+              <li><a href="{% url 'client' %}">Our Clients</a></li>
+              <li><a href="{% url 'partners' %}">Partners & Investors</a></li>
+              <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="#">Facilities</a></li>
+          <li class="contactmob"><a href="{% url 'contact' %}">Contact Us</a></li>
+          <li></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+        <a href="{% url 'contact' %}" class="btn-get-started contactus">Contact Us</a>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="active">Facilities</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+
+    <section id="servicesin" class="servicesin">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-in">
+          {% if hero_banner.title %}
+            <h2>{{ hero_banner.title }}</h2>
+          {% else %}
+            <h2>Facilities</h2>
+          {% endif %}
+          {% if hero_banner.content %}
+            <p>{{ hero_banner.content }}</p>
+          {% else %}
+          <p>SIGMA boasts a state-of-the-art 400 Sqm Air Conditioned Calibration & MRO work area at Goa, setting the standard for
+          precision and quality. From advanced research and development labs to cutting-edge manufacturing plants, our
+          infrastructure is designed to drive excellence in every aspect of our operations. Explore our facilities and experience
+          the foundation of Sigma's commitment to innovation and quality.</p>
+          {% endif %}
+        </div>
+
+        <div class="row gy-4" data-aos="fade-up">
+
+          {% if facilities %}
+           {% for facility in facilities %}
+              <div class="col-sm-6">
+                <div class="servicescol">
+                  {% if facility.image %}
+                    <img src="{{ facility.image.url }}" width="100%">
+                  {% endif %}
+                  <h3>{{ facility.name }}</h3>
+                  <p>{{ facility.description }}</p>
+                  <center> <a href="" class="btn-inner-section">View <i class="fa fa-arrow-right"></i> </a> </center>
+                </div>
+              </div>
+            {% endfor %}
+      
+          {% else %}
+
+            <div class="col-sm-6">
+              <div class="servicescol">
+                <img src="{% static 'img/facilities/1.png' %}" width="100%">
+                <h3>Environment Test Equipment</h3>
+                <center> <a href="" class="btn-inner-section">View <i class="fa fa-arrow-right"></i> </a> </center>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="servicescol">
+                <img src="{% static 'img/facilities/2.png' %}" width="100%">
+                <h3>Vibration Test Chamber</h3>
+                <center> <a href="" class="btn-inner-section">View <i class="fa fa-arrow-right"></i> </a> </center>
+              </div>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <section class="connect">
+      <div class="container">
+        <div class="connecttext">
+          <h2>Connect With Us</h2>
+          <p>Ready to see SIGMA in action? </p>
+          <a href="{% url 'contact' %}" class="btn-get-started">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer" data-aos="fade-up">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-8 col-md-12 footer-info">
+          <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+            <img src="{% static 'img/logo.png' %}" width="auto">
+          </a>
+          {% if settings.description %}
+            <p>{{ settings.description }}</p>
+          {% else %}
+            <p>Your all-in-one solution for elevating defense solutions</p>
+          {% endif %}
+          <div class="social-links d-flex mt-4">
+            <a href="{{ settings.twitter }}" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="{{ settings.facebook }}" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="{{ settings.instagram }}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'profile' %}">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'facilities' %}">Facilities</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <ul>
+            <li><a href="{% url 'team' %}">Our Team</a></li>
+            <li><a href="{% url 'client' %}">Our Clients</a></li>
+            <li><a href="faq.html">FAQ's</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

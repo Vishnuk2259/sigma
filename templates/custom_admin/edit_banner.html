@@ -1,0 +1,90 @@
+{% extends 'custom_admin/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <style>
+        .form-control {
+            border: 1px solid #d2d6da !important;
+            padding-left: 5px !important;
+        }
+
+        .col-form-label {
+            margin-top: 20px !important;
+            width: 500px !important;
+        }
+
+        .btn {
+            margin-top: 20px !important;
+            margin-right: 20px !important;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="col-6 grid-margin stretch-card mx-auto">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit {{ table_name }}</h4>
+            <p>Banner ID: {{ banner_id }}</p>
+
+            <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="id_page_url" class="col-sm-2 col-form-label">Page URL</label>
+                    <div class="col-sm-10">
+                        {{form.page_url}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="id_banner_type" class="col-sm-2 col-form-label">Banner Type</label>
+                    <div class="col-sm-10">
+                        {{form.banner_type}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="id_content" class="col-sm-2 col-form-label">Banner Content</label>
+                    <div class="col-sm-10">
+                        {{form.content}}
+                    </div>
+                </div>
+
+                {% if form.image %}
+                    <div class="form-group row">
+                        <label for="id_image" class="col-sm-2 col-form-label">Image</label>
+                        <div class="col-sm-10">
+                            {{form.image}}
+                            <textarea name="pro_img1" id="pro_img1" style="display: none;"></textarea>
+                            <img src="{{form.image.url}}" id="imageview1" style="height: auto;width: 100px;">
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="form-group row">
+                    <label for="id_title" class="col-sm-2 col-form-label">Title</label>
+                    <div class="col-sm-10">
+                        {{form.title}}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_about" class="col-sm-2 col-form-label">About</label>
+                    <div class="col-sm-10">
+                        {{form.about}}
+                    </div>
+                </div>
+
+
+                {{form.errors}}
+
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <a href="{% url 'banner_view' %}" class="btn btn-dark">Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
