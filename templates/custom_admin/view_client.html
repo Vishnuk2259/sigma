@@ -25,7 +25,6 @@
                         <tr>
                             <th>SL.no</th>
                             <th>Client Name</th>
-                            <th>LinkedIn</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,7 +32,6 @@
                         <tr>
                             <td>{{ page_obj.start_index|add:forloop.counter0 }}</td>
                             <td>{{ client.name|default:"No Data" }}</td>
-                            <td>{{ client.linkedin|default:"No URL" }}</td>
                             <td><a href="{% url 'client_edit' client.id %}" class="btn btn-outline-success"><span
                                         class="glyphicon glyphicon-pencil">Edit</span></a></td>
                             <td><a href="{% url 'client_delete' client.id %}" onclick="return myFunction()"
