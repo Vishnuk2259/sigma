@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.cache import never_cache
@@ -129,15 +129,15 @@ def delete_banner(request, id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_banner(request, id):
+        banner_instance = get_object_or_404(Banner, id=id)
+
         if request.method == 'POST':
-            banner_instance = Banner.objects.get(id=id)
             form = BannerForm(request.POST, request.FILES, instance=banner_instance)
             if form.is_valid():
                 form.save()
                 return redirect('banner_view')
 
         else:
-            banner_instance = Banner.objects.get(id=id)
             form = BannerForm(instance=banner_instance)
 
         context = {
@@ -191,15 +191,15 @@ def delete_client(request,id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_client(request, id):
+        client_instance = get_object_or_404(Client, id=id)
+
         if request.method == 'POST':
-            client_instance = Client.objects.get(id=id)
             form = ClientForm(request.POST, request.FILES, instance=client_instance)
             if form.is_valid():
                 form.save()
                 return redirect('client_view')
 
         else:
-            client_instance = Client.objects.get(id=id)
             form = ClientForm(instance = client_instance)
 
         context = {
@@ -253,15 +253,15 @@ def delete_facilities(request,id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_facilities(request, id):
+        facility_instance = get_object_or_404(Facilities, id=id)
+
         if request.method == 'POST':
-            facility_instance = Facilities.objects.get(id=id)
             form = FacilitiesForm(request.POST, request.FILES, instance=facility_instance)
             if form.is_valid():
                 form.save()
                 return redirect('facility_view')
 
         else:
-            facility_instance = Facilities.objects.get(id=id)
             form = FacilitiesForm(instance = facility_instance)
 
         context = {
@@ -315,15 +315,15 @@ def delete_partners(request,id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_partners(request, id):
+        partner_instance = get_object_or_404(Partners, id=id)
+
         if request.method == 'POST':
-            partner_instance = Partners.objects.get(id=id)
             form = PartnersForm(request.POST, request.FILES, instance=partner_instance)
             if form.is_valid():
                 form.save()
                 return redirect('partner_view')
 
         else:
-            partner_instance = Partners.objects.get(id=id)
             form = PartnersForm(instance = partner_instance)
 
         context = {
@@ -377,15 +377,15 @@ def delete_services(request,id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_services(request, id):
+        service_instance = get_object_or_404(Services, id=id)
+
         if request.method == 'POST':
-            service_instance = Services.objects.get(id=id)
             form = ServicesForm(request.POST, request.FILES, instance = service_instance)
             if form.is_valid():
                 form.save()
                 return redirect('service_view')
 
         else:
-            service_instance = Services.objects.get(id=id)
             form = ServicesForm(instance = service_instance)
 
         context = {
@@ -439,15 +439,15 @@ def delete_gallery(request,id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_gallery(request, id):
+        gallery_instance = get_object_or_404(Gallery, id=id)
+
         if request.method == 'POST':
-            gallery_instance = Gallery.objects.get(id=id)
             form = GalleryForm(request.POST, request.FILES, instance = gallery_instance)
             if form.is_valid():
                 form.save()
                 return redirect('gallery_view')
 
         else:
-            gallery_instance = Gallery.objects.get(id=id)
             form = GalleryForm(instance = gallery_instance)
 
         context = {
@@ -501,15 +501,15 @@ def delete_contact(request,id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_contact(request, id):
+        contact_instance = get_object_or_404(Contact, id=id)
+
         if request.method == 'POST':
-            contact_instance = Contact.objects.get(id=id)
             form = ContactForm(request.POST, request.FILES, instance = contact_instance)
             if form.is_valid():
                 form.save()
                 return redirect('contact_view')
 
         else:
-            contact_instance = Contact.objects.get(id=id)
             form = ContactForm(instance = contact_instance)
 
         context = {
@@ -563,15 +563,15 @@ def delete_settings(request,id):
 @login_required(login_url='admin_login')
 @never_cache
 def edit_settings(request, id):
+        setting_instance = get_object_or_404(Settings, id=id)
+
         if request.method == 'POST':
-            setting_instance = Settings.objects.get(id=id)
             form = SettingsForm(request.POST, request.FILES, instance = setting_instance)
             if form.is_valid():
                 form.save()
                 return redirect('settings_view')
 
         else:
-            setting_instance = Settings.objects.get(id=id)
             form = SettingsForm(instance = setting_instance)
 
         context = {

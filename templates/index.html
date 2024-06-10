@@ -108,50 +108,50 @@
         <div class="row">
 
           <div class="col-md-1 "> </div>
-          {% if body_banners %}
-            {% for body_banner in body_banners %}
-            <div class="col-md-2 col-xs-6 bannericon">
-              {% if body_banner %}
-                {% if body_banner.image %}
-                  <img src="{{ body_banner.image.url }}">
-                {% else %}
-                  <img src="{% static 'img/bannericon.png' %}">
+            {% if body_banners %}
+              {% for body_banner in body_banners %}
+              <div class="col-md-2 col-xs-6 bannericon">
+                {% if body_banner %}
+                  {% if body_banner.image %}
+                    <img src="{{ body_banner.image.url }}">
+                  {% else %}
+                    <img src="{% static 'img/bannericon.png' %}">
+                  {% endif %}
+                  <h2>{{ body_banner.title }}</h2>
+                  <p>{{ body_banner.content }}</p>
                 {% endif %}
-                <h2>{{ body_banner.title }}</h2>
-                <p>{{ body_banner.content }}</p>
-              {% endif %}
-            </div>
-            {% endfor %}
-          {% else %}
-            <div class="col-md-2 col-xs-6 bannericon">
-              <img src="{% static 'img/bannericon.png' %}">
-              <h2>Manufacturing</h2>
-              <p>Crafting Excellence: Where Precision Meets Innovation. Explore Sigma's Manufacturing Section for Cutting-Edge Solutions.</p>
-            </div>
-            <div class="col-md-2 col-xs-6 bannericon">
-              <img src="{% static 'img/bannericon.png' %}">
-              <h2>Indigenisation</h2>
-              <p>Empowering Self-Reliance: Sigma's indigenization Initiative. Innovating Locally, Impacting Globally.</p>
-            </div>
-            <div class="col-md-2 col-xs-6 bannericon">
-              <img src="{% static 'img/bannericon.png' %}">
-              <h2>Research & Design</h2>
-              <p>Innovating Tomorrow, Today: Sigma's Research and Design Hub. Where Ideas Shape the Future of Defence Solutions.</p>
-            </div>
-            <div class="col-md-2 col-xs-6 bannericon">
-              <img src="{% static 'img/bannericon.png' %}">
-              <h2>Reverse Engineering</h2>
-              <p>Unlocking Insights, Redefining Solutions: Sigma's Reverse Engineering Expertise. Transforming Challenges into
-              Opportunities.</p>
-            </div>
-            <div class="col-md-2 col-xs-6 bannericon">
-              <img src="{% static 'img/bannericon.png' %}">
-              <h2>Calibration</h2>
-              <p>Where Precision Meets Perfection. Experience Unparalleled Accuracy and Reliability in Every Measurement with Sigma's
-              Expert Calibration Services.</p>
-            </div>
-          {% endif %}
-          <div class="col-md-1 "> </div>
+              </div>
+              {% endfor %}
+            {% else %}
+              <div class="col-md-2 col-xs-6 bannericon">
+                <img src="{% static 'img/bannericon.png' %}">
+                <h2>Manufacturing</h2>
+                <p>Crafting Excellence: Where Precision Meets Innovation. Explore Sigma's Manufacturing Section for Cutting-Edge Solutions.</p>
+              </div>
+              <div class="col-md-2 col-xs-6 bannericon">
+                <img src="{% static 'img/bannericon.png' %}">
+                <h2>Indigenisation</h2>
+                <p>Empowering Self-Reliance: Sigma's indigenization Initiative. Innovating Locally, Impacting Globally.</p>
+              </div>
+              <div class="col-md-2 col-xs-6 bannericon">
+                <img src="{% static 'img/bannericon.png' %}">
+                <h2>Research & Design</h2>
+                <p>Innovating Tomorrow, Today: Sigma's Research and Design Hub. Where Ideas Shape the Future of Defence Solutions.</p>
+              </div>
+              <div class="col-md-2 col-xs-6 bannericon">
+                <img src="{% static 'img/bannericon.png' %}">
+                <h2>Reverse Engineering</h2>
+                <p>Unlocking Insights, Redefining Solutions: Sigma's Reverse Engineering Expertise. Transforming Challenges into
+                Opportunities.</p>
+              </div>
+              <div class="col-md-2 col-xs-6 bannericon">
+                <img src="{% static 'img/bannericon.png' %}">
+                <h2>Calibration</h2>
+                <p>Where Precision Meets Perfection. Experience Unparalleled Accuracy and Reliability in Every Measurement with Sigma's
+                Expert Calibration Services.</p>
+              </div>
+            {% endif %}
+          </div>
         </div>
       </div>
     </section>
@@ -426,7 +426,7 @@
           {% endif %}
         </div>
 
-        <center> <a href="{% url 'partners' %}" class="btn-inner-section">See All <i class="fa fa-arrow-right"></i> </a> </center>
+        <center> <a href="{% url 'partners' %}" class="btn-inner-section">See All<i class="fa fa-arrow-right"></i> </a> </center>
 
       </div>
     </section>

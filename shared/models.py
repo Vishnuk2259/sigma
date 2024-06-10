@@ -30,9 +30,9 @@ class BaseModel(models.Model):
         self.updated_at = timezone.now()
         return super(BaseModel, self).save(*args, **kwargs)
     
-
+    
 class Gallery(BaseModel):
-    image = models.ImageField()
+    image = models.ImageField(upload_to = 'uploads/gallery')
     title = models.CharField(max_length = 100, null = True, blank = True)
     description = models.TextField(null = True, blank = True)
     

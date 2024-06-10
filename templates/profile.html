@@ -195,47 +195,13 @@
                   {% endif %}
                   <h3>{{ team.name }}</h3>
                   <p>{{ team.member_designation }}</p>
-                  <a href="{{ team.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  {% if team.linkedin %}
+                    <a href="{{ team.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  {% endif %}
                 </div>
               </div>
             {% endif %}
           {% endfor %}
-
-          <!-- <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div> -->
 
         </div>
 
@@ -298,7 +264,6 @@
 
               {% for client in clients %}
                 <div class="swiper-slide slidertest">
-                  <!-- <h5>Outstanding!</h5> -->
                   {% if client.image %}
                     <img src="{{ client.image.url }}">
                   {% else %}
@@ -308,31 +273,8 @@
                   {% if client.feedback %}
                   <h6>{{ client.feedback }}</h6>
                   {% endif %}
-                  <!-- <p>Founder, SIGMA</p> -->
                 </div>
               {% endfor %}
-
-              <!-- <div class="swiper-slide">
-                <h5>Outstanding!</h5>
-                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua.</h6>
-                <img src="assets/img/man.jpeg">
-                <p>Founder, SIGMA</p>
-              </div>
-
-              <div class="swiper-slide">
-                <h5>Outstanding!</h5>
-                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua.</h6>
-                <img src="assets/img/man.jpeg">
-                <p>Founder, SIGMA</p>
-              </div>
-
-              <div class="swiper-slide">
-                <h5>Outstanding!</h5>
-                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua.</h6>
-                <img src="assets/img/man.jpeg">
-                <p>Founder, SIGMA</p>
-              </div> -->
-
             </div>
             <div class="swiper-pagination"></div>
           </div>

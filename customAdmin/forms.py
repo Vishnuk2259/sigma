@@ -29,15 +29,13 @@ class ClientForm(ModelForm):
 
     class Meta: 
         model = Client
-        fields = ('name', 'description', 'image', 'feedback', 'linkedin')
+        fields = ('name', 'description', 'image', 'feedback')
 
     def __init__(self, *args, **kwargs):
         super(ClientForm, self).__init__(*args, **kwargs)
         self.fields['name'].widget.attrs.update({'class': 'form-control'})
         self.fields['description'].widget.attrs.update({'class': 'form-control'})
         self.fields['feedback'].widget.attrs.update({'class': 'form-control'})
-        self.fields['linkedin'].widget.attrs.update({'class': 'form-control'})
-
 
 class FacilitiesForm(ModelForm):
     image = forms.ImageField(widget = forms.FileInput, required = False)
