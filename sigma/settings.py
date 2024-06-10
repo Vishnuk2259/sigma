@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sigma',
-        'USER': 'sigma_admin',
-        'PASSWORD': 'Sigma@123',
+        'USER': 'root',
+        'PASSWORD': 'Geethakumarim@10',
         'HOST': 'localhost',
         'PORT': '3306',
     }
