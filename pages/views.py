@@ -177,6 +177,11 @@ def profile(request):
         vission_banner = Banner.objects.filter(page_url = '/profile', about = 'Vission', banner_type = 'Body').latest('created_at')
     except Banner.DoesNotExist:
         vission_banner = None
+        
+    try:
+        body_banner = Banner.objects.filter(page_url = '/profile', about = 'Body banner', banner_type = 'Body').latest('created_at')
+    except Banner.DoesNotExist:
+        body_banner = None
     
     try:
         value_banner = Banner.objects.filter(page_url = '/profile', about = 'Value', banner_type = 'Body').latest('created_at')
@@ -208,7 +213,7 @@ def profile(request):
     except Settings.DoesNotExist:
         settings = None
 
-    return render(request, 'profile.html', {'hero_banner': hero_banner, 'mission_banner': mission_banner, 'vission_banner': vission_banner, 'value_banner': value_banner, 'team_banner': team_banner, 'teams':teams, 'why_sigma_banner': why_sigma_banner, 'settings': settings, 'clients': clients})
+    return render(request, 'profile.html', {'hero_banner': hero_banner, 'mission_banner': mission_banner, 'vission_banner': vission_banner, 'value_banner': value_banner, 'team_banner': team_banner, 'teams':teams, 'why_sigma_banner': why_sigma_banner, 'settings': settings, 'clients': clients, 'body_banner': body_banner})
 
 def services(request):
 
