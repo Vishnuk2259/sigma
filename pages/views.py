@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from banners.models import Banner
 from partners.models import Partners
 from shared.models import Settings, Gallery, Contact
@@ -257,3 +257,31 @@ def team(request):
         settings = None
 
     return render(request, 'team.html', {'hero_banner': hero_banner, 'management_teams': management_teams, 'engineering_teams': engineering_teams, 'settings': settings})
+
+def service(requests, service_id):
+    
+    try:
+        service = get_object_or_404(Services, pk = service_id)
+    except Services.DoesNotExist:
+        service = None
+
+    try:
+        settings = Settings.objects.latest('created_at')
+    except Settings.DoesNotExist:
+        settings = None
+
+    return render (requests, "service.html", {'settings': settings, 'service': service})
+
+def facility(requests, facility_id):
+    
+    try:
+        facility = get_object_or_404(Facilities, pk = facility_id)
+    except Facilities.DoesNotExist:
+        facility = None
+
+    try:
+        settings = Settings.objects.latest('created_at')
+    except Settings.DoesNotExist:
+        settings = None
+
+    return render (requests, "facility.html", {'settings': settings, 'facility': facility})

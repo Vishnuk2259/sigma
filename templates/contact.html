@@ -93,12 +93,12 @@
 
         <div class="section-header">
           {% if hero_banner.title %}
-            <h2>{{ hero_banner.title }}</h2>
+            <h2>{{ hero_banner.title|safe }}</h2>
           {% else %}
             <h2>Our valuable clients</h2>
           {% endif %}
           {% if hero_banner.content %}
-            <p>{{ hero_banner.content }}</p>
+            <p>{{ hero_banner.content|safe }}</p>
           {% else %}
             <p>Reach out to us for inquiries, support, or demo.</p>
           {% endif %}

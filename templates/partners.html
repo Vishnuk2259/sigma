@@ -94,12 +94,12 @@
 
         <div class="section-header" data-aos="fade-in">
           {% if hero_banner.title %}
-            <h2>{{ hero_banner.title }}</h2>
+            <h2>{{ hero_banner.title|safe }}</h2>
           {% else %}
             <h2>Partners & Investors</h2>
           {% endif %}
           {% if hero_banner.content %}
-            <p>{{ hero_banner.content }}</p>
+            <p>{{ hero_banner.content|safe }}</p>
           {% else %}
             <p>Sigma's Partners & Investors.
             Join us in shaping the future of innovation and excellence. At Sigma, we value collaborative relationships that drive
@@ -123,46 +123,6 @@
               </div>
             </div>
           {% endfor %}
-
-          <!-- <div class="col-sm-4">
-            <div class="partners">
-              <img src="{% static 'img/amazon.png' %}">
-              <h3>Amazon Limited</h3>
-              <p><i class="fa fa-globe"></i>www.amazon.com </p>
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="partners">
-              <img src="{% static 'img/amazon.png' %}">
-              <h3>Amazon Limited</h3>
-              <p><i class="fa fa-globe"></i>www.amazon.com </p>
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="partners">
-              <img src="{% static 'img/amazon.png' %}">
-              <h3>Amazon Limited</h3>
-              <p><i class="fa fa-globe"></i>www.amazon.com </p>
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="partners">
-              <img src="{% static 'img/amazon.png' %}">
-              <h3>Amazon Limited</h3>
-              <p><i class="fa fa-globe"></i>www.amazon.com </p>
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="partners">
-              <img src="{% static 'img/amazon.png' %}">
-              <h3>Amazon Limited</h3>
-              <p><i class="fa fa-globe"></i>www.amazon.com </p>
-            </div>
-          </div> -->
 
         </div>
 

@@ -12,5 +12,7 @@ urlpatterns = [
     path('services/', views.services, name = 'services'),
     path('team/', views.team, name = 'team'),
     path('submit_contact_form/', views.submit_contact_form, name='submit_contact_form'),
+    path('services/<int:service_id>/', views.service, name = 'service'),
+    path('facilities/<int:facility_id>/', views.facility, name = 'facility'),
     # path('send-email/<int:contact_id>/', views.send_email, name='send_email')
 ]

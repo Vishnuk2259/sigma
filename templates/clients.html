@@ -92,12 +92,12 @@
 
         <div class="section-header" data-aos="fade-in">
           {% if hero_banner.title %}
-            <h2>{{ hero_banner.title }}</h2>
+            <h2>{{ hero_banner.title|safe }}</h2>
           {% else %}
             <h2>Our valuable clients</h2>
           {% endif %}
           {% if hero_banner.content %}
-            <p>{{ hero_banner.content }}</p>
+            <p>{{ hero_banner.content|safe }}</p>
           {% else %}
             <p>Our Valuable Clients
             At Sigma, we cherish the relationships we've cultivated with our esteemed clients. Through collaboration and a shared
@@ -122,7 +122,7 @@
                         {% endif %}
                       </div>
                       {% if client.description %}
-                        <p>{{ client.description }}</p>
+                        <p>{{ client.description|safe }}</p>
                       {% endif %}
                     </div>
                   </div>

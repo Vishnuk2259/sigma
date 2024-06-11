@@ -74,8 +74,8 @@
       <div class="row gy-5">
         <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           {% if hero_banner %}
-            <h2>{{ hero_banner.title }}</h2>
-            <p>{{ hero_banner.content }}</p>
+            <h2>{{ hero_banner.title|safe }}</h2>
+            <p>{{ hero_banner.content|safe }}</p>
           {% else %}
             <h2>Empowering Defence: Sigma's Dynamic Solutions</h2>
             <p>Sigma: Pioneering Defence Solutions Worldwide. ISO 9001:2015 Certified Excellence. Partnering with Industry Leaders for
@@ -117,8 +117,8 @@
                   {% else %}
                     <img src="{% static 'img/bannericon.png' %}">
                   {% endif %}
-                  <h2>{{ body_banner.title }}</h2>
-                  <p>{{ body_banner.content }}</p>
+                  <h2>{{ body_banner.title|safe }}</h2>
+                  <p>{{ body_banner.content|safe }}</p>
                 {% endif %}
               </div>
               {% endfor %}
@@ -163,7 +163,7 @@
         <div class="section-header" data-aos="fade-in">
           {% if whatwedo_banner %}
             <h2>What We Do</h2>
-            <p>{{ whatwedo_banner.content }}</p>
+            <p>{{ whatwedo_banner.content|safe }}</p>
           {% else %}
             <h2>What We Do</h2>
             <p>Your Premier Destination for Cutting-Edge Defence Solutions. From innovative research and design to meticulous calibration and reverse engineering, we specialize in elevating defence technology to new heights.</p>
@@ -178,8 +178,8 @@
                 <div class="col-sm-6 services">
                   <div class="row gy-4">
                     <div class="col-sm-8 col-xs-8 servicestext">
-                      <h3><span>{{ forloop.counter|stringformat:"02d" }}</span> {{ whatwedo_content.title }}</h3>
-                      <p>{{ whatwedo_content.content }}</p>
+                      <h3><span>{{ forloop.counter|stringformat:"02d" }}</span> {{ whatwedo_content.title|safe }}</h3>
+                      <p>{{ whatwedo_content.content|safe }}</p>
                     </div>
                     <div class="col-sm-4 col-xs-4">
                       {% if whatwedo_content.image %}
@@ -203,8 +203,8 @@
                       {% endif %}
                     </div>
                     <div class="col-sm-8 col-xs-8 servicestext">
-                      <h3><span>{{ forloop.counter|stringformat:"02d" }}</span> {{ whatwedo_content.title }}</h3>
-                      <p>{{ whatwedo_content.content }}</p>
+                      <h3><span>{{ forloop.counter|stringformat:"02d" }}</span> {{ whatwedo_content.title|safe }}</h3>
+                      <p>{{ whatwedo_content.content|safe }}</p>
                     </div>
                   </div>
                 </div>
@@ -377,8 +377,8 @@
 
         <div class="section-header" data-aos="fade-in">
           {% if partner_banner %}
-            <h2>{{ partner_banner.title }}</h2>
-            <p>{{ partner_banner.content }}</p>
+            <h2>{{ partner_banner.title|safe }}</h2>
+            <p>{{ partner_banner.content|safe }}</p>
           {% else %}
             <h2>Partners & Investors</h2>
             <p>Fostering Growth Together: Sigma's Partners and Investors. Join Sigma in Building Strong Collaborative Relationships to Drive Innovation and Success.</p>
@@ -398,31 +398,6 @@
               </div>
             {% endfor %}
 
-          {% else %}
-       <!-- <div class="row gy-4" data-aos="fade-up"> -->
-            <div class="col-sm-4">
-              <div class="partners">
-                <img src="{% static 'img/amazon.png' %}">
-                <h3>Amazon Limited</h3>
-                <p><i class="fa fa-globe"></i>www.amazon.com </p>
-              </div>
-            </div>
-
-            <div class="col-sm-4">
-              <div class="partners">
-                <img src="{% static 'img/amazon.png' %}">
-                <h3>Amazon Limited</h3>
-                <p><i class="fa fa-globe"></i>www.amazon.com </p>
-              </div>
-            </div>
-
-            <div class="col-sm-4">
-              <div class="partners">
-                <img src="{% static 'img/amazon.png' %}">
-                <h3>Amazon Limited</h3>
-                <p><i class="fa fa-globe"></i>www.amazon.com </p>
-              </div>
-            </div>
           {% endif %}
         </div>
 

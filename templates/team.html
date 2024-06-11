@@ -94,12 +94,12 @@
 
         <div class="section-header" data-aos="fade-in">
           {% if hero_banner.title %}
-            <h2>{{ hero_banner.title }}</h2>
+            <h2>{{ hero_banner.title|safe }}</h2>
           {% else %}
             <h2>Our Team</h2>
           {% endif %}
           {% if hero_banner.content %}
-            <p>{{ hero_banner.content }}</p>
+            <p>{{ hero_banner.content|safe }}</p>
           {% else %}
             <p>Meet the Sigma Team: A dedicated and diverse group of professionals united by a passion for innovation and excellence.
             Together, we strive to tackle challenges, drive progress, and exceed expectations.</p>
@@ -123,33 +123,6 @@
               </div>
             </div>
           {% endfor %}
-
-          <!-- <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div> -->
 
         </div>
 
@@ -178,81 +151,6 @@
               </div>
             </div>
           {% endfor %}
-
-          <!-- <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="ourteam">
-              <img src="{% static 'img/man.jpeg' %}">
-              <h3>Ramesh Krishna</h3>
-              <p>Founder, SIGMA</p>
-              <i class="fa fa-linkedin"></i>
-            </div>
-          </div>
-
-        </div> -->
-
 
       </div>
     </section>

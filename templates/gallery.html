@@ -93,12 +93,12 @@
       <div class="container">
         <div class="section-header" data-aos="fade-in">
           {% if hero_banner.title %}
-            <h2>{{ hero_banner.title }}</h2>
+            <h2>{{ hero_banner.title|safe }}</h2>
           {% else %}
             <h2>Gallery</h2>
           {% endif %}
           {% if hero_banner.content %}
-            <p>{{ hero_banner.content }}</p>
+            <p>{{ hero_banner.content|safe }}</p>
           {% else %}
           <p>Exploring Our World: Welcome to the Sigma Gallery.
           Step into a visual journey showcasing our latest projects, innovations, and achievements. From cutting-edge technology

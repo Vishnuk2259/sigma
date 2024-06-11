@@ -93,12 +93,12 @@
 
         <div class="section-header" data-aos="fade-in">
           {% if hero_banner.title %}
-            <h2>{{ hero_banner.title }}</h2>
+            <h2>{{ hero_banner.title|safe }}</h2>
           {% else %}
             <h2>Facilities</h2>
           {% endif %}
           {% if hero_banner.content %}
-            <p>{{ hero_banner.content }}</p>
+            <p>{{ hero_banner.content|safe }}</p>
           {% else %}
           <p>SIGMA boasts a state-of-the-art 400 Sqm Air Conditioned Calibration & MRO work area at Goa, setting the standard for
           precision and quality. From advanced research and development labs to cutting-edge manufacturing plants, our
@@ -117,8 +117,8 @@
                     <img src="{{ facility.image.url }}" width="100%">
                   {% endif %}
                   <h3>{{ facility.name }}</h3>
-                  <p>{{ facility.description }}</p>
-                  <center> <a href="" class="btn-inner-section">View <i class="fa fa-arrow-right"></i> </a> </center>
+                  <p>{{ facility.description|safe }}</p>
+                  <center> <a href="{% url 'facility' facility.id %}" class="btn-inner-section">View <i class="fa fa-arrow-right"></i> </a> </center>
                 </div>
               </div>
             {% endfor %}
